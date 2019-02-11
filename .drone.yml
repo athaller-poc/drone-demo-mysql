@@ -7,6 +7,10 @@ steps:
   commands:
   - sleep 15
   - mysql -u root -h database --execute="SELECT VERSION();"
+- name: black duck hub
+  image: byrnedo/alpine-curl
+  commands:
+  - bash <(curl -s https://copilot.blackducksoftware.com/ci/circle2/scripts/upload)
 
 services:
 - name: database
